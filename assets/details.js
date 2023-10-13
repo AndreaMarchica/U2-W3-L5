@@ -1,11 +1,9 @@
 const addressBarContent = new URLSearchParams(location.search);
-// questo crea un oggetto di tipo URLSearchParams a partire dal contenuto della barra degli indirizzi
-// recupero nello specifico eventId
-const itemId = addressBarContent.get("itemId"); // <-- recupero solamente il valore di itemId
+
+const itemId = addressBarContent.get("itemId");
 console.log(itemId);
 
 const deleteItem = function () {
-  // questa funzione servirà ad eliminare l'evento corrente
   fetch("https://striveschool-api.herokuapp.com/api/product/" + itemId, {
     method: "DELETE",
     headers: {
@@ -15,9 +13,8 @@ const deleteItem = function () {
   })
     .then((res) => {
       if (res.ok) {
-        // EVENTO ELIMINATO CORRETTAMENTE!
         Swal.fire("Good job!", "Item correctly deleted", "success");
-        location.assign("index.html"); // facciamo tornare l'utente in homepage
+        location.assign("index.html");
       } else {
         Swal.fire({
           icon: "error",
@@ -33,7 +30,6 @@ const deleteItem = function () {
 };
 
 const generateItemDetails = function (details) {
-  // prendo un riferimento alla row
   const row = document.getElementById("item-details");
   row.innerHTML = `
           <div class="col col-12 col-lg-6">
@@ -64,15 +60,12 @@ const getSingleItemDetails = function () {
   })
     .then((res) => {
       if (res.ok) {
-        // abbiamo ottenuto i dettagli del singolo evento su cui abbiamo cliccato
-        // recuperiamo il suo JSON
         return res.json();
       } else {
         throw new Error("Errore nel caricamento dei dettagli");
       }
     })
     .then((itemData) => {
-      // eventData è UN OGGETTO! sono i singoli dettagli dell'evento, il suo name, il suo price, etc.
       generateItemDetails(itemData);
     })
     .catch((err) => console.log("ERRORE", err));
