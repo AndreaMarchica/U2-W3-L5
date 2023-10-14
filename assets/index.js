@@ -14,7 +14,7 @@ const renderItems = function (arrayOfItems) {
 
     newCol.innerHTML = `
       <div class="card mb-3 ">
-          <img src="${item.imageUrl}" class="card-img-top" alt="generic concert picture">
+          <img src="${item.imageUrl}" class="card-img-top border border-bottom-black" alt="generic concert picture">
           <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.description}</p>

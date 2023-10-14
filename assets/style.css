@@ -1,7 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
 .navbar-brand > img {
   width: 100px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 1px solid grey;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 body {
   font-family: "Young Serif", serif;
+}
+body {
+  background-image: url(/assets/pngtre\(1\).jpg);
+}
+.card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 450px;
+}
+@media screen and (max-width: 767px) {
+  .card {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .card {
+    height: 800px;
+  }
+}
+@keyframes zoom {
+}
+.card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-basis: content;
 }
