@@ -51,6 +51,11 @@ const generateItemDetails = function (details) {
       `;
 };
 
+const hideSpinner = function () {
+  const spinner = document.getElementById("loading-spinner");
+  spinner.classList.add("d-none");
+};
+
 const getSingleItemDetails = function () {
   fetch("https://striveschool-api.herokuapp.com/api/product/" + itemId, {
     headers: {
@@ -59,6 +64,7 @@ const getSingleItemDetails = function () {
     },
   })
     .then((res) => {
+      hideSpinner();
       if (res.ok) {
         return res.json();
       } else {
@@ -68,7 +74,10 @@ const getSingleItemDetails = function () {
     .then((itemData) => {
       generateItemDetails(itemData);
     })
-    .catch((err) => console.log("ERRORE", err));
+    .catch((err) => {
+      hideSpinner();
+      console.log("ERRORE", err);
+    });
 };
 
 getSingleItemDetails();

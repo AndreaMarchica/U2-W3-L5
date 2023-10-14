@@ -20,7 +20,7 @@ const renderItems = function (arrayOfItems) {
               <p class="card-text">${item.description}</p>
               <p class="card-text">${item.brand}</p>
               <p class="card-text">${item.price}€</p>
-              <a href="details.html?itemId=${item._id}" class="btn btn-primary">DETAILS</a>
+              <a href="details.html?itemId=${item._id}" class="btn btn-secondary">DETAILS</a>
           </div>
       </div>
       `;

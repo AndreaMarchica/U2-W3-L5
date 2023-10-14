@@ -67,7 +67,8 @@
     <main>
       <h1 class="text-center mt-4">S-HOUSE</h1>
       <h3 class="text-center mb-3">The home of shoes</h3>
-      <div class="container">
+      <!-- SPINNER -->
+      <!-- <div class="container">
         <div class="row justify-content-center">
           <div
             class="spinner-border text-success mb-5"
@@ -76,10 +77,19 @@
           >
             <span class="visually-hidden">Loading...</span>
           </div>
+        </div> -->
+      <div class="container">
+        <div class="row justify-content-center">
+          <div id="loading-spinner" class="orbit-spinner">
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <div class="orbit"></div>
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
-        <div class="row" id="items-row">
-          <!-- le colonne con gli eventi verranno generate da JS! -->
-        </div>
+
+        <!-- ITEM ROW -->
+        <div class="row" id="items-row"></div>
       </div>
     </main>
     <script
