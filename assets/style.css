@@ -32,10 +32,10 @@ body {
 }
 @media screen and (max-width: 575px) {
   .card {
-    height: 800px;
+    height: 480px;
   }
   .card:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
   }
 }
 

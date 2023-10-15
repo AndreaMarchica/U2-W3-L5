@@ -5,8 +5,8 @@ const renderItems = function (arrayOfItems) {
     const newCol = document.createElement("div");
     newCol.classList.add(
       "col",
-      "col-12",
-      "col-sm-6",
+      "col-6",
+      "col-sm-4",
       "col-md-3",
       "col-lg-2",
       "myCard"
